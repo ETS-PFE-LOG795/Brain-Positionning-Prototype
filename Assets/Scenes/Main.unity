@@ -5211,7 +5211,7 @@ MonoBehaviour:
   connector: {fileID: 1625037120}
   connectionPanel: {fileID: 1625037119}
   positionningManager: {fileID: 634577787}
-  debug: 0
+  debug: 1
 --- !u!4 &913080624
 Transform:
   m_ObjectHideFlags: 0
