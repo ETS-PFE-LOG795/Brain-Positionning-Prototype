@@ -111,7 +111,7 @@ public class PositionningManager : MonoBehaviour {
     Debug.Log("A: " + a + ", B: " + b);
     Debug.Log("UP: " + c);
     float dot = Mathf.Abs(Vector3.Dot(a, b));
-    Debug.Log("Error in coordinate system: " + dot); // Perpendicular, expecting 0
+    Debug.Log("Orthogonalizy Error XZ: " + dot); // Perpendicular, expecting 0
 
     // Rotate the brain in the new coordinate system
     brain.transform.rotation = Quaternion.identity;
@@ -121,7 +121,7 @@ public class PositionningManager : MonoBehaviour {
     // Debug
     Vector3 compareVector = -brain.transform.right;
     float compareDot = Vector3.Dot(compareVector, a);
-    Debug.Log("Error after rotation: " + (1f - compareDot)); // Same direction, expecting 1
+    Debug.Log("Orthogonalizy Error XY: " + (1f - compareDot)); // Same direction, expecting 1
 
     // Position the brain
     Vector3 dt = brain.transform.position - anchorBrainPositions[3-1].transform.position;
@@ -143,4 +143,22 @@ public class PositionningManager : MonoBehaviour {
     buttonMoveController.Close();
     objectManipulator.enabled = false;
   }
+
+  /*
+   * Global error
+   *
+   */
+   private void GlobalError(Vector3 x, Vector3 y, Vector3 z) {
+     Vector3 compareX = -brain.transform.right;
+     Vector3 compareY = brain.transform.up;
+     Vector3 compareZ = brain.transform.forward;
+
+     float errorX = (x - compareX).magnitude;
+     float errorY = (y - compareY).magnitude;
+     float errorZ = (z - compareZ).magnitude;
+
+     float error = errorX + errorY + errorZ;
+
+     Debug.Log("Global error: " + error + " (x: " + errorX + ", y: " + errorY + ", z: " + errorZ);
+   }
 }
