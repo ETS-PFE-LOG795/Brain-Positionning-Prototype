@@ -6,7 +6,7 @@
 
 ## Guide d'utilisation
 
-**Connexion**
+### Connexion
 Les étapes suivantes permettent d'établir la connexion via Holographic Remoting entre le PC et l'HoloLens.
 
  1. D'abord s'assurer que les deux appareils sont connectés au même réseau.
@@ -16,7 +16,7 @@ Les étapes suivantes permettent d'établir la connexion via Holographic Remotin
 ![Interface utilisateur pour la connexion en Holographic Remoting](Readme/app-connection-small.jpg)
 
 
-**Menu de l'application PC**
+### Menu de l'application PC
 Lorsque la connexion en Holographic Remoting est établie, les options suivantes sont disponibles sur l'applicaiton du PC:
 
 ![Interface utilisateur dans l'application du PC](Readme/app-interface-btns.jpg)
@@ -31,7 +31,7 @@ Utilisation de l'interface:
  - **X.** Quitte l'application
 
 
-**Manipulation dans l'HoloLens**
+### Manipulation dans l'HoloLens
 Lors de l'étape Place Brain, l'utilisateur peut déplacer et appliquer une rotation au modèle virtuel du cerveau. Pour le sélectionner, il suffit d'utilise le pincement du pouce et de l'index. Tant que ceux-si sont maintenus, l'objet est considéré aggripé par la main de l'utilisateur. On peut utiliser les deux main pour le déplacement. À noter que la zone de sélection du cerveau (hitbox) est à peu près 1.5 fois plus grande que le modèle lui-même.
 
 Lors de l'étape Place Anchor, l'interface suivant apparait.
@@ -47,11 +47,10 @@ Utilisation de l'interface:
 
 L'image suivante présente l'ancre (sphère magenta) et les axes de couleur correspondant avec les boutons de déplacement. L'objectif de cette étape est d'aligner le mieux possible les ancres virtuels à leurs homologues réels sur la version imprimée du cerveau.
 
-![Visualisation d'un ancre et des gizmos d'axe](Readme/App_photo_gizmo-small-small.jpg)
+![Visualisation d'un ancre et des gizmos d'axe](Readme/App_photo_gizmo-small.jpg)
 
 
-
-**Debug**
+### Debug
 Deux options pour le debugging sont disponibles. On peut les activer ou les activer directement dans hiérarchie de la scène `Main`, sous l'objet nommé `GameManager`. On y retrouve deux scripts:
  - `Game Manager`: l'option Debug, lorsque vrai, affichera le profiler dans l'HoloLens. Celui-ci permet entre autres de visualiser le framerate et la mémoire utilisée.
  - `Console Debugger`: l'option Active, lorsque vrai, affichera sur l'application exécutable un interface pour la même console que l'on retrouve dans l'éditeur. Cela permet de voir les messages d'erreurs et d'information.
